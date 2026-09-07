@@ -30,7 +30,7 @@ import { useBasketStore } from '../stores/basket'
 const basketStore = useBasketStore()
 
 const getImageUrl = (img) => {
-  return `${import.meta.env.STORAGE_URL}/${img}`
+  return `${import.meta.env.VITE_STORAGE_URL}/${img}`
 }
 
 const removeFromBasket = async (productId) => {

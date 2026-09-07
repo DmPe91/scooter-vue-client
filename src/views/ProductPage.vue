@@ -25,7 +25,7 @@ const API_URL = import.meta.env.VITE_API_URL
 const product = ref(null)
 
 const getImageUrl = (img) => {
-  return `${import.meta.env.STORAGE_URL}/${img}`
+  return `${import.meta.env.VITE_STORAGE_URL}/${img}`
 }
 
 const fetchProduct = async () => {

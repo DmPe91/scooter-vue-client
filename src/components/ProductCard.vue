@@ -28,7 +28,7 @@ const basketStore = useBasketStore()
 const toastStore = useToastStore()
 
 const getImageUrl = (img) => {
-  return `${import.meta.env.STORAGE_URL}/${img}`
+  return `${import.meta.env.VITE_STORAGE_URL}/${img}`
 }
 
 const addToCart = async () => {
@@ -43,7 +43,7 @@ const addToCart = async () => {
 
 <style scoped>
 .product-card {
-  width: 250px;
+  /*width: 250px;*/
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 15px;
