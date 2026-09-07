@@ -1,9 +1,5 @@
 <template>
-  <Loader v-if="productStore.loading" />
-  <div v-else-if="productStore.error" class="error-message">
-    {{ productStore.error }}
-  </div>
-  <div v-else class="catalog">
+  <div class="catalog">
     <div class="filters">
       <select v-model="productStore.selectedType" @change="productStore.fetchProducts">
         <option value="">Все типы</option>
@@ -24,7 +20,13 @@
       </select>
     </div>
 
-    <div class="product-list">
+    <Loader v-if="productStore.loading" />
+
+    <div v-else-if="productStore.error" class="error-message">
+      {{ productStore.error }}
+    </div>
+
+    <div v-else class="product-list">
       <ProductCard v-for="product in productStore.products" :key="product.id" :product="product" />
     </div>
   </div>

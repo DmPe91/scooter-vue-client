@@ -25,7 +25,7 @@ const API_URL = import.meta.env.VITE_API_URL
 const product = ref(null)
 
 const getImageUrl = (img) => {
-  return `http://127.0.0.1:8000/storage/${img}`
+  return `${import.meta.env.STORAGE_URL}/${img}`
 }
 
 const fetchProduct = async () => {
@@ -79,7 +79,7 @@ onMounted(fetchProduct)
 .product-price {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2F4F4F;
+  color: #2f4f4f;
 }
 
 .product-type,
@@ -94,7 +94,7 @@ onMounted(fetchProduct)
 }
 
 .buy-btn {
-  background: #2F4F4F;
+  background: #2f4f4f;
   color: white;
   padding: 12px 24px;
   border: 2px solid transparent;
@@ -105,8 +105,8 @@ onMounted(fetchProduct)
 
 .buy-btn:hover {
   background: white;
-  color: #2F4F4F;
-  border: 2px solid #2F4F4F;
+  color: #2f4f4f;
+  border: 2px solid #2f4f4f;
 }
 
 .loading {

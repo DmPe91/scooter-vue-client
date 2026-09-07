@@ -1,22 +1,14 @@
 <template>
   <div class="product-card">
-    <img
-      :src="getImageUrl(product.img)"
-      :alt="product.name"
-      class="product-img"
-    />
+    <img :src="getImageUrl(product.img)" :alt="product.name" class="product-img" />
     <div class="product-info">
       <div class="product-name">{{ product.name }}</div>
       <div class="product-teaser">{{ product.tizer_description }}</div>
     </div>
     <div class="product-price">{{ product.price }} рублей</div>
     <div class="product-actions">
-      <router-link :to="'/product/' + product.id" class="product-btn">
-        Узнать больше
-      </router-link>
-      <button class="product-btn buy-btn" @click="addToCart">
-        Купить
-      </button>
+      <router-link :to="'/product/' + product.id" class="product-btn"> Узнать больше </router-link>
+      <button class="product-btn buy-btn" @click="addToCart">Купить</button>
     </div>
   </div>
 </template>
@@ -36,7 +28,7 @@ const basketStore = useBasketStore()
 const toastStore = useToastStore()
 
 const getImageUrl = (img) => {
-  return `http://127.0.0.1:8000/storage/${img}`
+  return `${import.meta.env.STORAGE_URL}/${img}`
 }
 
 const addToCart = async () => {
@@ -82,7 +74,7 @@ const addToCart = async () => {
 
 .product-name {
   font-weight: bold;
-  color: #2F4F4F;
+  color: #2f4f4f;
   margin-bottom: 5px;
   min-height: 40px;
   display: flex;
@@ -115,7 +107,7 @@ const addToCart = async () => {
 .product-btn {
   display: block;
   width: 100%;
-  background: #2F4F4F;
+  background: #2f4f4f;
   color: white;
   padding: 8px 12px;
   border: 2px solid transparent;
@@ -130,11 +122,11 @@ const addToCart = async () => {
 
 .product-btn:hover {
   background: white;
-  color: #2F4F4F;
-  border: 2px solid #2F4F4F;
+  color: #2f4f4f;
+  border: 2px solid #2f4f4f;
 }
 
 .buy-btn {
-  background: #2F4F4F;
+  background: #2f4f4f;
 }
 </style>

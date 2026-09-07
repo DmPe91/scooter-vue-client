@@ -30,7 +30,7 @@ import { useBasketStore } from '../stores/basket'
 const basketStore = useBasketStore()
 
 const getImageUrl = (img) => {
-  return `http://127.0.0.1:8000/storage/${img}`
+  return `${import.meta.env.STORAGE_URL}/${img}`
 }
 
 const removeFromBasket = async (productId) => {
