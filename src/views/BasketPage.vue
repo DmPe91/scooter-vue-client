@@ -2,12 +2,13 @@
   <div class="basket-page">
     <h2>Корзина</h2>
 
-    <div v-if="basketStore.basket && basketStore.basket.products && basketStore.basket.products.length > 0" class="basket-content">
-      <div
-        v-for="item in basketStore.basket.products"
-        :key="item.id"
-        class="basket-item"
-      >
+    <div
+      v-if="
+        basketStore.basket && basketStore.basket.products && basketStore.basket.products.length > 0
+      "
+      class="basket-content"
+    >
+      <div v-for="item in basketStore.basket.products" :key="item.id" class="basket-item">
         <img :src="getImageUrl(item.img)" :alt="item.name" class="basket-img" />
         <div class="basket-info">
           <div class="basket-name">{{ item.name }}</div>
@@ -18,9 +19,7 @@
       </div>
     </div>
 
-    <div v-else class="empty-basket">
-      Корзина пуста
-    </div>
+    <div v-else class="empty-basket">Корзина пуста</div>
   </div>
 </template>
 
@@ -51,7 +50,7 @@ onMounted(() => {
 }
 
 h2 {
-  color: #2F4F4F;
+  color: #2f4f4f;
   margin-bottom: 20px;
 }
 
@@ -82,7 +81,7 @@ h2 {
 
 .basket-name {
   font-weight: bold;
-  color: #2F4F4F;
+  color: #2f4f4f;
 }
 
 .basket-price {
@@ -112,5 +111,10 @@ h2 {
   font-size: 1.2rem;
   color: #555;
   padding: 40px;
+}
+@media (max-width: 480px) {
+  .basket-item {
+    flex-wrap: wrap;
+  }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="header-inner">
       <!-- Логотип слева -->
       <div class="logo-block">
-        <img src="../logo/logo2.jpg" alt="logo" class="logo-img" />
+        <img src="/logo/kick-scooter.png" alt="logo" class="logo-img" />
       </div>
 
       <!-- Центр -->
@@ -17,23 +17,25 @@
       </div>
 
       <!-- Логотип справа -->
-      <div class="logo-block">
-        <img src="../logo/logo1.jpg" alt="logo" class="logo-img" />
+      <div class="logo-block ebike-block">
+        <img src="/logo/e-bike.png" alt="logo" class="ebike" />
       </div>
     </div>
   </header>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .header {
   width: 100%;
-  border-bottom: 3px solid #2F4F4F;
+  border-bottom: 3px solid #2f4f4f;
   background: white;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  color: #2F4F4F;
+  font-family:
+    Comic Sans MS,
+    Comic Sans,
+    cursive;
+  color: #2f4f4f;
 }
 
 .header-inner {
@@ -79,18 +81,18 @@
 
 .menu {
   font-weight: bold;
-  color: #2F4F4F;
+  color: #2f4f4f;
   text-decoration: none;
   padding: 8px 12px;
 }
 
 .menu:hover {
-  background: #2F4F4F;
+  background: #2f4f4f;
   color: white;
 }
 
 .button {
-  background: #2F4F4F;
+  background: #2f4f4f;
   color: white;
   font-weight: bold;
   padding: 8px 16px;
@@ -100,8 +102,8 @@
 
 .button:hover {
   background: white;
-  color: #2F4F4F;
-  border: 2px solid #2F4F4F;
+  color: #2f4f4f;
+  border: 2px solid #2f4f4f;
 }
 
 /* Мобильная адаптация */
@@ -109,6 +111,10 @@
   .header-inner {
     flex-direction: column;
     text-align: center;
+  }
+
+  .ebike-block {
+    display: none;
   }
 
   .logo-img {

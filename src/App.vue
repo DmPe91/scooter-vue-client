@@ -10,9 +10,9 @@ const toastStore = useToastStore()
 
 <template>
   <Header />
-  <main>
+  <main class="container">
     <RouterView />
   </main>
   <Footer />
-<Toast :message="toastStore.message" />
+  <Toast :message="toastStore.message" />
 </template>

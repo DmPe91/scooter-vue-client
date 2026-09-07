@@ -11,11 +11,18 @@ export const useProductStore = defineStore('product', {
     selectedType: '',
     selectedCondition: '',
     loading: false,
+    error: null,
   }),
 
   actions: {
     async fetchProducts() {
+      if (this.loading) return
+
       this.loading = true
+      this.error = null
+
+      const minDelay = new Promise((resolve) => setTimeout(resolve, 2000))
+
       try {
         let url = `${API_URL}/products`
         const params = new URLSearchParams()
@@ -35,11 +42,13 @@ export const useProductStore = defineStore('product', {
         this.products = response.data
       } catch (error) {
         console.error('Ошибка загрузки товаров:', error)
+        this.error = 'Не удалось загрузить товары'
+        this.products = []
       } finally {
+        await minDelay
         this.loading = false
       }
     },
-
     async fetchTypes() {
       try {
         const response = await axios.get(`${API_URL}/types`)
