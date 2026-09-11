@@ -29,6 +29,12 @@ npm install
 npm run dev
 ```
 
+**🚀 Live Demo:** [scooter-vue-client.vercel.app](https://scooter-vue-client.vercel.app)  
+**📡 Backend API:** [scooter-laravel-api.onrender.com](https://scooter-laravel-api.onrender.com)  
+
+> ⚠️ **Важно:** Backend на бесплатном тарифе Render.com "засыпает" после 15 минут неактивности. Первая загрузка может занять 30-60 секунд, иногда приходиться перезгружать страницу несколько раз.
+
+
 ## Связанный репозиторий
 
 Бэкенд: [scooter-laravel-api](https://github.com/DmPe91/scooter-laravel-api)
